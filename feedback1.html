@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    function validate(){
+	    var q=document.getElementById("field").value;
+		if(q=='yes'){
+		    return true;
+		}
+		else  if(q=='no'){
+		      alert("Thanks for feedback\nYou can logout from the page\n Thank you");
+			  return false;
+			 }
+		else{
+		      alert("Please select appropriately\nThank you");
+			  return false;
+			 }
+		}
+</script>
+</head>
+<form action="food order.html" onsubmit="return validate();">
+<body style="text-align:center">
+<h1>Thanks for ordering</h1>
+Would you like to reorder:
+<input type="text" id="field" placeholder="yes or no">
+<button>submit</button>
+</body>
+</form>
+</html>

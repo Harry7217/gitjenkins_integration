@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Food order</title>
+   <style>
+   body{
+	background-color:powderblue;
+	background-image:url("img.jpg");
+}
+h1{
+	text-align:center;
+	font-size:300%;
+}
+.testclass{
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+	border-collapse:collapse;
+}
+td{
+	padding:15px;
+}
+tr:nth-child(even){
+	background:orange;
+}
+tr:nth-child(odd){
+	background:lightgreen;
+}
+.test{
+	text-align:center;
+}
+</style>
+   <script>
+         function check(){
+		 var name=document.getElementById("name").value;
+		 var email=document.getElementById("email").value;
+		 var pass=document.getElementById("login").value;
+		 var reg=/^[A-Za-z]{2,15}$/;
+		 var reg1=/^[a-z]{2,50}@gmail.com$/;
+		 var reg2=/^[0-9]{4}$/;
+		 
+		 if(reg.test(name)){
+             document.getElementById("mess1").style.color="green";		 
+		     document.getElementById("mess1").innerHTML="   Name accepted";
+		 }
+		 else{
+		     document.getElementById("mess1").style.color="red";
+		     document.getElementById("mess1").innerHTML="     Please enter correct name";
+			  return false;
+		}
+		if(reg1.test(email)){
+		    document.getElementById("mess2").style.color="green";
+		    document.getElementById("mess2").innerHTML=" Mail-id accepted";
+		}
+        else{
+		document.getElementById("mess2").style.color="red";
+            document.getElementById("mess2").innerHTML="    Enter correct mail-id";	
+			 return false;
+		}
+        if(reg2.test(pass)){
+		document.getElementById("mess3").style.color="green";
+            document.getElementById("mess3").innerHTML=" Ok";
+		}	
+		else{
+		     document.getElementById("mess3").style.color="red";
+		     document.getElementById("mess3").innerHTML="    Not ok";
+			 return false;
+		}
+		return true;
+	}
+	</script>
+</head>
+<form action="feedback.html" onsubmit="return check();" >
+<body >
+<div>
+<h1>Food Order form</h1>
+  <table border="1" class="testclass">
+    <tr>
+  <td> <strong>Enter name:</strong></td>
+  <td><input type="text" id="name" onblur="check()" placeholder="name" required><span id="mess1"></span></td>
+   </tr>
+   <tr>
+   <td><strong>Enter emailaddress:</strong></td>
+  <td> <input type="text" id="email" onblur="check()" placeholder="end with @gmail.com" required><span id="mess2"></span></td>
+  </tr>
+  <tr>
+  <td> <strong>Enter login id:</strong></td>
+   <td><input type="password" id="login" onblur="check()" placeholder="xxxx-any 4 digit number" required><span id="mess3"></span></td>
+    </tr>
+	<tr>
+	<td><strong>Select any soup item</strong></td>
+<td> <select name="items">
+      <option value="soup">Tomato soup</option>
+	    <option value="soup1">Spring Onion soup</option>
+		<option value="soup2">Cream and Corn soup</option>
+		<option value="soup3">Manchow soup</option>
+		<option value="soup4">Rice water soup</option>
+	</select></td>
+	</tr>
+	<tr>
+	<td><strong>Select any starter</strong></td>
+	<td>
+	<input type="radio" name="food" value="st" checked>Panner Tikka<br>
+	 <input type="radio" name="food" value="st1">Panner 65<br>
+   <input type="radio" name="food" value="st2" >Vegetable roll<br>
+   <input type="radio" name="food" value="st3">Veg Kabab<br>
+   <input type="radio" name="food" value="st4">Bread roll<br>
+   <input type="radio" name="food" value="st4">Kofta recipe<br>
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Select main item</strong><br></td>
+   <td>
+   <input type="checkbox" name="food1" value="main" >Pulka<br>
+   <input type="checkbox" name="food1" value="main1" >Roti<br>
+   <input type="checkbox" name="food1" value="main2" >Egg Noodles<br>
+   <input type="checkbox" name="food1" value="main3" >Manchurian<br>
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Select gravy<strong></td>
+     <td>
+	 <input type="checkbox" name="food2" value="gravy">Malai kofta<br>
+	 <input type="checkbox" name="food2" value="gravy1">Kadai panner<br>
+	 <input type="checkbox" name="food2" value="gravy2">Cornmeal gravy<br>
+	 <input type="checkbox" name="food2" value="gravy3">Sawmill Gravy<br>
+	 </td>
+	 </tr>
+	<tr>
+	<td><strong>Select any drink<strong></td>
+	<td>
+	<input type="radio" name="food3" value="drink">Pepsi<br>
+	<input type="radio" name="food3" value="drink1">Sprite<br>
+	<input type="radio" name="food3" value="drink2">Mountain dew<br>
+	<input type="radio" name="food3" value="drink3">Apple fizz<br></td>
+	</tr>
+   <tr>
+   <td><strong>Any additional items you like to order<strong></td>
+   <td>
+   <input type="text" placeholder="Ignore if not required"></td>
+   <tr>
+   <td class="test" colspan="2"><button>submit</button></td></tr>
+   </table>
+   </div>
+</body>
+</form>
+</html>
